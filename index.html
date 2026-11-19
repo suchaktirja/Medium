@@ -7,7 +7,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="app-shell">
+  <section class="auth-screen" id="authScreen">
+    <div class="auth-card">
+      <div class="auth-brand"><span class="brand-mark">Q</span> QUANTORA</div>
+      <p class="eyebrow">WELCOME TO YOUR WORKSPACE</p>
+      <h1 id="authTitle">Sign in to Quantora</h1>
+      <p class="muted" id="authSubtitle">Manage your projects and keep your team moving.</p>
+      <form id="authForm">
+        <label>Email address<input id="authEmail" type="email" required placeholder="alex@example.com" /></label>
+        <label>Password<input id="authPassword" type="password" required minlength="4" placeholder="Enter your password" /></label>
+        <button class="button button-primary full-width" id="authSubmit" type="submit">Sign in</button>
+      </form>
+      <p class="auth-switch" id="authSwitch">New to Quantora? <button type="button" id="toggleAuth">Create an account</button></p>
+      <p class="auth-note">Demo frontend only — any valid email and password (4+ characters) will work.</p>
+    </div>
+  </section>
+  <div class="app-shell" id="appShell" hidden>
     <aside class="sidebar" id="sidebar">
       <a class="brand" href="#" aria-label="Quantora home">
         <span class="brand-mark">Q</span><span>QUANTORA</span>
@@ -42,7 +57,7 @@
         <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="currentPage">Overview</strong></div>
         <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search anything..." /><kbd>/</kbd></label>
         <button class="icon-button notification-button" aria-label="Notifications">♧<i></i></button>
-        <button class="profile-button"><span class="profile-avatar">AM</span><span><strong>Alex Morgan</strong><small>Workspace admin</small></span><span class="chevron">⌄</span></button>
+        <button class="profile-button" id="logoutBtn" title="Sign out"><span class="profile-avatar" id="profileInitials">AM</span><span><strong id="profileName">Alex Morgan</strong><small>Workspace admin</small></span><span class="chevron">⌄</span></button>
       </header>
 
       <section class="welcome-row">
